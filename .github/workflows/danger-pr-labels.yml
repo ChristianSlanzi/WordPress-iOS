@@ -10,7 +10,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - name: Check Labels with DangerJS
+      - name: Validate PR Labels
         uses: danger/danger-js@9.1.8
         with:
           args: "--dangerfile Automattic/peril-settings/org/pr/label.ts"
