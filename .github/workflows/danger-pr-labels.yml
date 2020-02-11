@@ -7,8 +7,7 @@ on:
     types: [opened, reopened, labeled, unlabeled]
 
 jobs:
-  danger_check_pr_labels:
-    name: Validate PR Labels
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Check Labels with DangerJS

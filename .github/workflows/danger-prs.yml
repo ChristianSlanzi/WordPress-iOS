@@ -7,8 +7,7 @@ on:
     types: [opened, reopened, synchronize]
 
 jobs:
-  danger_check_pr_ios_specific:
-    name: iOS Sanity Checks
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Run sanity checks on the iOS project
