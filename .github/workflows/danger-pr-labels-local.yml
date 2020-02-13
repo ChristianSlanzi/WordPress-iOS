@@ -33,6 +33,6 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Validate PR Labels
-        run: yarn run danger ci --dangerfile mokagio/danger-settings/org/pr/label.ts
+        run: yarn run danger ci --dangerfile automattic/peril-settings/org/pr/label.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
