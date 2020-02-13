@@ -24,6 +24,6 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Validate PR Labels
-        run: yarn run danger ci --dangerfile Automattic/peril-settings/org/pr/label.ts
+        run: yarn run danger ci --dangerfile dangerfile-labels.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
