@@ -11,7 +11,10 @@ workspace 'WordPress.xcworkspace'
 ##
 def wordpress_shared
     ## for production:
-    pod 'WordPressShared', '~> 1.8.13'
+    #
+    # Using a commit reference to for a failure via Danger
+    # pod 'WordPressShared', '~> 1.8.13'
+    pod 'WordPressShared', :git => 'https://github.com/wordpress-mobile/WordPress-iOS-Shared.git', :commit  => 'efe5a065f3ace331353595ef85eef502baa23497'
 
     ## for development:
     # pod 'WordPressShared', :path => '../WordPress-iOS-Shared'
