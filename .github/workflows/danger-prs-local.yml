@@ -1,7 +1,7 @@
 name: Consistency Checks (Local Danger)
 on:
   pull_request:
-    types: [opened, reopened, synchronized]
+    types: [opened, reopened, synchronize]
 
 jobs:
   check:
