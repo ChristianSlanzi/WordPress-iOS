@@ -1,7 +1,7 @@
-name: Consistency Checks (Local Danger)
+name: Validated PR Labels (Local Danger)
 on:
   pull_request:
-    types: [opened, reopened, synchronized]
+    types: [opened, reopened, labeled, unlabeled]
 
 jobs:
   check:
@@ -29,10 +29,10 @@ jobs:
         # frozen-lockfile will make the build fail if the lockfile is not there
         run: yarn install --frozen-lockfile
 
-      - name: Consistency Checks
+      - name: Validate PR Labels
         run: |
           yarn run danger ci \
-            --dangerfile mokagio/danger-settings/org/pr/ios-macos.ts \
-            --id consistency
+            --dangerfile mokagio/danger-settings/org/pr/label.ts \
+            --id label
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
