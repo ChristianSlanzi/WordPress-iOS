@@ -1,10 +1,7 @@
 name: Validated PR Labels (Local Danger)
 on:
   pull_request:
-    # The restrictions on the types of pull_request event that can trigger this
-    # workflow is intentional. We only want to run label related checks on a
-    # new or reopened PR, or when its labels change.
-    types: [opened, reopened, labeled, unlabeled]
+    types: [opened, reopened, synchronized]
 
 jobs:
   check:
@@ -33,6 +30,9 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Validate PR Labels
-        run: yarn run danger ci --dangerfile mokagio/danger-settings/org/pr/label.ts
+        run: |
+          yarn run danger ci \
+            --dangerfile mokagio/danger-settings/org/pr/ios-macos.ts \
+            --id custom_id
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
