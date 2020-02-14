@@ -1,4 +1,4 @@
-name: Validated PR Labels (Local Danger)
+name: Validated PR Labels
 on:
   pull_request:
     # The restrictions on the types of pull_request event that can trigger this
