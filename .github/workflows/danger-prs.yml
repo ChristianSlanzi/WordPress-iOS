@@ -15,6 +15,6 @@ jobs:
         with:
           args: |
             --dangerfile Automattic/peril-settings/org/pr/ios-macos.ts \
-            --id danger_prs
+            --id danger_id_same
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
