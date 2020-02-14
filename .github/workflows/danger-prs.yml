@@ -35,7 +35,7 @@ jobs:
       - name: Run Consistency Checks
         run: |
           yarn run danger ci \
-            --dangerfile mokagio/danger-settings/org/pr/ios-macos.ts \
+            --dangerfile Automattic/peril-settings/org/pr/ios-macos.ts \
             --id consistency_checks
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
