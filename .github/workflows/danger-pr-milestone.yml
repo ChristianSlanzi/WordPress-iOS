@@ -13,6 +13,8 @@ jobs:
       - name: Validate PR Labels
         uses: danger/danger-js@9.1.8
         with:
-          args: "--dangerfile Automattic/peril-settings/org/pr/milestone.ts"
+          args: |
+            --dangerfile Automattic/peril-settings/org/pr/milestone.ts \
+            --id danger_milestone
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
