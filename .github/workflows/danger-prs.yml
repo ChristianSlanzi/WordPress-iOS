@@ -13,6 +13,8 @@ jobs:
       - name: Run Consistency Checks
         uses: danger/danger-js@9.1.8
         with:
-          args: "--dangerfile Automattic/peril-settings/org/pr/ios-macos.ts"
+          args: |
+            --dangerfile Automattic/peril-settings/org/pr/ios-macos.ts \
+            --id danger_prs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
