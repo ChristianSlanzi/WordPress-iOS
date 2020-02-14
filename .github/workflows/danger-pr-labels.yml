@@ -35,7 +35,7 @@ jobs:
       - name: Validate PR Labels
         run: |
           yarn run danger ci \
-            --dangerfile mokagio/danger-settings/org/pr/label.ts \
+            --dangerfile Automattic/peril-settings/org/pr/label.ts \
             --id label
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
