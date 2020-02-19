@@ -1,7 +1,10 @@
 name: Run Checks with Danger
-# As a test, since I'm not getting any workflow triggered, let's change the
-# events to something simple
-on: pull_request
+on:
+  pull_request:
+    # Because we have a rule that validates the PR labels, we want it to run
+    # when the labels change, not only when a PR is opened/reopened or changes
+    # are pushed to it.
+    types: [opened, reopened, synchronize, labeled, unlabeled]
 
 jobs:
   danger:
