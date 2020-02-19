@@ -9,6 +9,8 @@ on:
 jobs:
   danger:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
 
@@ -38,8 +40,6 @@ jobs:
             --dangerfile Automattic/peril-settings/org/pr/label.ts \
             --no-publish-check \
             --id pr_labels
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Consistency Checks
         run: |
@@ -47,5 +47,3 @@ jobs:
             --dangerfile Automattic/peril-settings/org/pr/ios-macos.ts \
             --no-publish-check \
             --id consistency_checks
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
