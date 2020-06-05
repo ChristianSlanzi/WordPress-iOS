@@ -1,0 +1,13 @@
+name: Test status event for GitHub Actions
+on:
+  status
+
+jobs:
+  danger:
+    runs-on: ubuntu-latest
+    steps:
+      # For debugging
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
